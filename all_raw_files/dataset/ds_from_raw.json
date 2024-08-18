@@ -1,0 +1,33 @@
+{
+    "name": "ds_from_raw",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "ls_raw_blod_taxi",
+            "type": "LinkedServiceReference"
+        },
+        "parameters": {
+            "sourceFileName": {
+                "type": "string"
+            }
+        },
+        "folder": {
+            "name": "raw_taxi_related_data"
+        },
+        "annotations": [],
+        "type": "Parquet",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobStorageLocation",
+                "fileName": {
+                    "value": "@dataset().sourceFileName",
+                    "type": "Expression"
+                },
+                "folderPath": "raw",
+                "container": "raw"
+            },
+            "compressionCodec": "none"
+        },
+        "schema": []
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

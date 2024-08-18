@@ -1,0 +1,24 @@
+{
+    "name": "ds_sink_to_vendor2",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "ls_datalake_raw_copy",
+            "type": "LinkedServiceReference"
+        },
+        "folder": {
+            "name": "sinking"
+        },
+        "annotations": [],
+        "type": "Parquet",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobFSLocation",
+                "folderPath": "sink/vendor2",
+                "fileSystem": "landing-from-green-tripdata"
+            },
+            "compressionCodec": "snappy"
+        },
+        "schema": []
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

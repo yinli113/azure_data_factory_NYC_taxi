@@ -1,0 +1,30 @@
+{
+    "name": "al_raw_files",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "ls_raw_blod_taxi",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "Json",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobStorageLocation",
+                "fileName": "all_raw_files.json",
+                "folderPath": "raw",
+                "container": "raw"
+            }
+        },
+        "schema": {
+            "type": "object",
+            "properties": {
+                "sourceFileName": {
+                    "type": "string"
+                },
+                "sinkFileName": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
